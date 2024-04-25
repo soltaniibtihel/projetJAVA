@@ -16,7 +16,7 @@ public class Accommodation {
     @FXML
     public void initialize() {
         add_button.setOnAction(e -> {
-            text_field.setText("vous avez cliqué");
+            text_field.setText("ADD NEW ACCOMMODATION");
         });
     }
 }

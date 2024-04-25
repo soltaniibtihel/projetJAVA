@@ -15,16 +15,12 @@ public class ServiceAccommodation implements IService<Accommodation>{
     }
     @Override
     public void ajouter(Accommodation accommodation) throws SQLException {
-        if(accommodation.getTitle().isBlank()){
-            System.out.println("title cannot be empty");
-        }else if(accommodation.getType().isBlank()){
-            System.out.println("type cannot be empty");
-        }else {
+
             String req = "insert into accommodation (title,address,type,price) values('" + accommodation.getTitle() + "','" + accommodation.getAddress() + "','" + accommodation.getType() + "'," + accommodation.getPrice() + ")";
             Statement statement = connection.createStatement();
             statement.executeUpdate(req);
             System.out.println("accommodation '"+accommodation.getTitle()+"' ajoute");
-        }
+
     }
 
     @Override
@@ -34,8 +30,8 @@ public class ServiceAccommodation implements IService<Accommodation>{
         PreparedStatement preparedStatement= connection.prepareStatement(req);
         preparedStatement.setString(1, accommodation.getTitle());
         preparedStatement.setString(2, accommodation.getAddress());
-        preparedStatement.setString(3, accommodation.getType());
-        preparedStatement.setInt(4, accommodation.getPrice());
+        preparedStatement.setString(4, accommodation.getType());
+        preparedStatement.setInt(3, accommodation.getPrice());
         preparedStatement.setInt(5, accommodation.getId());
 
         preparedStatement.executeUpdate();

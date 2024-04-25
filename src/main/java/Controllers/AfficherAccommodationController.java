@@ -78,6 +78,6 @@ public class AfficherAccommodationController {
 
 
     void setData(String param) {
-        welcomeLBL.setText("Welcome " + param);
+        welcomeLBL.setText("Accommodation List " + param);
     }
 }

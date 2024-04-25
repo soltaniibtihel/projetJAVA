@@ -60,7 +60,7 @@ public class AfficherCategoryController { ServiceCategory sp = new ServiceCatego
 
 
     void setData(String param) {
-        welcomeLBL.setText("Welcome " + param);
+        welcomeLBL.setText("Category List" + param);
     }
 
 }

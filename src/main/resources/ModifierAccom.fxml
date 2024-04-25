@@ -3,8 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -19,27 +17,12 @@
       <Button layoutX="434.0" layoutY="295.0" mnemonicParsing="false" onAction="#ModifierAccom" prefHeight="25.0" prefWidth="57.0" text="Insert" />
       <Button layoutX="497.0" layoutY="295.0" mnemonicParsing="false" onAction="#naviguez" text="Display" />
       <Pane layoutY="-1.0" prefHeight="73.0" prefWidth="600.0" style="-fx-background-color: #A7E0E0;">
-         <children>
-            <Label layoutX="210.0" layoutY="23.0" text="Edit Accommodation" textFill="#008035">
-               <font>
-                  <Font name="Edwardian Script ITC" size="36.0" />
-               </font>
-            </Label>
-         </children>
+         <Label layoutX="210.0" layoutY="23.0" text="Edit Accommodation" textFill="#008035">
+            <font>
+               <Font name="Edwardian Script ITC" size="36.0"/>
+            </font>
+         </Label>
       </Pane>
-      <VBox layoutY="69.0" prefHeight="331.0" prefWidth="148.0">
-         <children>
-            <ImageView fitHeight="137.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../Downloads/tunisia-travel-guide-inspirational-ideas-planning-trip-tunisia-camel-caraval-sahara.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="127.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../Downloads/Untitled.jpeg" />
-               </image>
-            </ImageView>
-         </children>
-      </VBox>
+      <VBox layoutY="69.0" prefHeight="331.0" prefWidth="148.0" />
    </children>
 </AnchorPane>

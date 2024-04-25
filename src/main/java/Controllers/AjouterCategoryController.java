@@ -27,6 +27,18 @@ public class AjouterCategoryController {
     void InsererCategory(ActionEvent event) {
         String categoryName = categoryNameTF.getText();
         String description = descriptionTF.getText();
+        Alert error = new Alert(Alert.AlertType.ERROR);
+        error.setTitle("Error");
+        if(categoryName.isBlank()){
+            error.setContentText("Name cannot be empty");
+            error.show();
+        }else if(description.isBlank()){
+            error.setContentText("Description cannot be empty");
+            error.show();
+        }else if(statisticTF.getText().isBlank()){
+            error.setContentText("Statistic cannot be empty");
+            error.show();
+        }else{
         int statistic = Integer.parseInt(statisticTF.getText());
         Category p = new Category(categoryName,description,statistic);
         ServiceCategory sp = new ServiceCategory();
@@ -34,14 +46,14 @@ public class AjouterCategoryController {
             sp.ajouter(p);
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Success");
-            alert.setContentText("Category insérée avec succéss");
+            alert.setContentText("Category has been inserted successfully");
             alert.show();
         } catch (SQLException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText(e.getMessage());
             alert.show();
-        }
+        }}
     }
 
 

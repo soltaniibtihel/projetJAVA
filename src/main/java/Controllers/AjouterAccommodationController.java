@@ -31,6 +31,21 @@ public class AjouterAccommodationController {
         String title = titleTF.getText();
         String type = typeTF.getText();
         String address = addressTF.getText();
+        Alert error = new Alert(Alert.AlertType.ERROR);
+        error.setTitle("Error");
+        if(title.isBlank()){
+            error.setContentText("Title cannot be empty");
+            error.show();
+        }else if(type.isBlank()){
+            error.setContentText("Type cannot be empty");
+            error.show();
+        }else if(address.isBlank()){
+            error.setContentText("Address cannot be empty");
+            error.show();
+        }else if(priceTF.getText().isBlank()){
+            error.setContentText("Price cannot be empty");
+            error.show();
+        } else {
         int price = Integer.parseInt(priceTF.getText());
         Accommodation p = new Accommodation(title,address,type,price);
         ServiceAccommodation sp = new ServiceAccommodation();
@@ -38,14 +53,14 @@ public class AjouterAccommodationController {
             sp.ajouter(p);
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Success");
-            alert.setContentText("Accommodation insérée avec succéss");
+            alert.setContentText("Accommodation has been inserted successfully");
             alert.show();
         } catch (SQLException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText(e.getMessage());
             alert.show();
-        }
+        }}
     }
 
 
