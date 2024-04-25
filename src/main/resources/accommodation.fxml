@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Accommodation">
+   <children>
+      <Button fx:id="add_button" layoutX="303.0" layoutY="150.0" mnemonicParsing="false" text="Add">
+         <font>
+            <Font name="Arial Italic" size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="232.0" layoutY="124.0" text="click here to add an accommodation" textFill="#000000e3">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="63.0" prefWidth="600.0" style="-fx-background-color: #b9ebff;">
+         <children>
+            <Label alignment="CENTER" prefHeight="71.0" prefWidth="154.0" text="DiscoverTN" textFill="GREEN">
+               <font>
+                  <Font name="Edwardian Script ITC" size="24.0" />
+               </font>
+            </Label>
+            <Separator orientation="VERTICAL" prefHeight="62.0" prefWidth="0.0" />
+            <HBox alignment="TOP_CENTER" prefHeight="63.0" prefWidth="205.0">
+               <children>
+                  <TextField prefHeight="32.0" prefWidth="156.0" text="search">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/Search.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <VBox layoutY="63.0" prefHeight="334.0" prefWidth="156.0" style="-fx-background-color: #b9ebff;">
+         <children>
+            <ImageView fitHeight="138.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/téléchargement%20(17).jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="125.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/téléchargement%20(14).jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="142.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/téléchargement%20(7).jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
