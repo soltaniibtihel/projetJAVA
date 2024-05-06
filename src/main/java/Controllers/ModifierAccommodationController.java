@@ -76,6 +76,10 @@ public class ModifierAccommodationController {
     public void setData(Accommodation data) {
         this.data = data;
         // Use the data parameter as needed
+        titleTF.setText(data.getTitle());
+        typeTF.setText(data.getType());
+        addressTF.setText(data.getAddress());
+        priceTF.setText(data.getPrice()+"");
     }
 
 }

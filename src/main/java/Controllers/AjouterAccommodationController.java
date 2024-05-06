@@ -1,18 +1,30 @@
 package Controllers;
 
 import entities.Accommodation;
+import entities.Category;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.StringConverter;
 import services.ServiceAccommodation;
+import services.ServiceCategory;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class AjouterAccommodationController {
+
+    ServiceCategory sp = new ServiceCategory();
+    @FXML
+    public ChoiceBox<Category> categories;
 
     @FXML
     private TextField priceTF;
@@ -25,6 +37,19 @@ public class AjouterAccommodationController {
 
     @FXML
     private TextField addressTF;
+
+    @FXML
+    void initialize() {
+
+        try {
+            List<entities.Category> categoryList = sp.afficher();
+            ObservableList<Category> observableList = FXCollections.observableList(categoryList);
+            categories.setItems(observableList);
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+    }
 
     @FXML
     void InsererAccom(ActionEvent event) {

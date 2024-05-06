@@ -3,6 +3,7 @@ package entities;
 public class Accommodation {
     private int id,price;
     private String title,type, address;
+    private Category category;
 
     public int getId() {
         return id;
@@ -42,6 +43,14 @@ public class Accommodation {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public Accommodation() {

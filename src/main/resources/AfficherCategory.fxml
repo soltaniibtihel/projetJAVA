@@ -22,5 +22,6 @@
          </font>
       </Label>
       <Button layoutX="430.0" layoutY="359.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
+      <Button layoutX="34.0" layoutY="359.0" mnemonicParsing="false" onAction="#showStats" text="Show stats" />
    </children>
 </AnchorPane>

@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -22,6 +23,7 @@
             <Font name="Edwardian Script ITC" size="36.0" />
          </font>
       </Label>
+       <TextField fx:id="filterField" layoutX="407.0" layoutY="27.0" promptText="Search" />
       <Button layoutX="430.0" layoutY="359.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
       <Button layoutX="495.0" layoutY="359.0" mnemonicParsing="false" onAction="#update" text="Update" />
    </children>
