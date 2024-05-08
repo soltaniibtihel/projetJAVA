@@ -9,19 +9,26 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
 import services.ServiceAccommodation;
 import services.ServiceCategory;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
 public class AjouterAccommodationController {
 
+    @FXML
+    public Button btnFileChooser;
+    @FXML
+    public TextField txtPhoto;
     ServiceCategory sp = new ServiceCategory();
     @FXML
     public ChoiceBox<Category> categories;
@@ -56,6 +63,7 @@ public class AjouterAccommodationController {
         String title = titleTF.getText();
         String type = typeTF.getText();
         String address = addressTF.getText();
+        String link = txtPhoto.getText();
         Alert error = new Alert(Alert.AlertType.ERROR);
         error.setTitle("Error");
         if(title.isBlank()){
@@ -73,6 +81,7 @@ public class AjouterAccommodationController {
         } else {
         int price = Integer.parseInt(priceTF.getText());
         Accommodation p = new Accommodation(title,address,type,price);
+        p.setImage(link);
         ServiceAccommodation sp = new ServiceAccommodation();
         try {
             sp.ajouter(p);
@@ -102,4 +111,12 @@ public class AjouterAccommodationController {
         }
     }
 
+    @FXML
+    private void handleFileChooser(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        File file = fileChooser.showOpenDialog(null);
+        if (file != null) {
+            txtPhoto.setText(file.getAbsolutePath().replace("\\", "\\\\"));
+        }
+    }
 }

@@ -7,11 +7,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import services.ServiceAccommodation;
 
 import java.io.IOException;
@@ -84,6 +86,21 @@ public class AfficherAccommodationController {
             System.err.println(e.getMessage());
         }
     }
+
+    @FXML
+    void viewAccom(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AccomDetail.fxml"));
+            Parent root = loader.load();
+            AccomDetail apc = loader.getController();
+            Accommodation p = tableView.getSelectionModel().getSelectedItem();
+            apc.setData(p);
+            welcomeLBL.getScene().setRoot(root);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
     private void handleFilterAction(String filterValue) {
         // Créer une liste temporaire pour stocker les guides filtrés
         ObservableList<Accommodation> filteredList = FXCollections.observableArrayList();
@@ -99,6 +116,27 @@ public class AfficherAccommodationController {
 
         // Mettre à jour les données de la TableView avec la liste filtrée
         tableView.setItems(filteredList);
+    }
+    @FXML
+    void go_Accom(ActionEvent event) {try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterAccom.fxml"));
+        Parent root = loader.load();
+
+        // Obtenir le contrôleur de Notificationcontroller
+        AjouterAccommodationController ajouterAccommodationController = loader.getController();
+
+        // Appeler la méthode pour initialiser les données avec l'ID de réservations
+
+        // Afficher la vue de Notification.fxml
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Notification");
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+
     }
 
 

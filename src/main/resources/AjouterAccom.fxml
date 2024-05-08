@@ -42,5 +42,7 @@
          </children>
       </Pane>
       <ChoiceBox fx:id="categories" layoutX="194.0" layoutY="290.0" prefWidth="150.0" />
+      <TextField fx:id="txtPhoto" layoutX="271.0" layoutY="339.0" promptText="Photo URL" />
+      <Button fx:id="btnFileChooser" layoutX="194.0" layoutY="339.0" onAction="#handleFileChooser" text="Choose File" />
    </children>
 </AnchorPane>

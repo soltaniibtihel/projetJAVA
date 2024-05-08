@@ -16,7 +16,7 @@ public class ServiceAccommodation implements IService<Accommodation>{
     @Override
     public void ajouter(Accommodation accommodation) throws SQLException {
 
-            String req = "insert into accommodation (title,address,type,price) values('" + accommodation.getTitle() + "','" + accommodation.getAddress() + "','" + accommodation.getType() + "'," + accommodation.getPrice() + ")";
+            String req = "insert into accommodation (title,address,type,price,image) values('" + accommodation.getTitle() + "','" + accommodation.getAddress() + "','" + accommodation.getType() + "'," + accommodation.getPrice() + ",'"+accommodation.getImage()+"')";
             Statement statement = connection.createStatement();
             statement.executeUpdate(req);
             System.out.println("accommodation '"+accommodation.getTitle()+"' ajoute");
@@ -61,6 +61,7 @@ public class ServiceAccommodation implements IService<Accommodation>{
             accommodation.setAddress(rs.getString(3));
             accommodation.setPrice(rs.getInt("Price"));
             accommodation.setId(rs.getInt("id"));
+            accommodation.setImage(rs.getString("image"));
 
             accommodations.add(accommodation);
 

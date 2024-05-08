@@ -24,7 +24,9 @@
          </font>
       </Label>
        <TextField fx:id="filterField" layoutX="407.0" layoutY="27.0" promptText="Search" />
-      <Button layoutX="430.0" layoutY="359.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
-      <Button layoutX="495.0" layoutY="359.0" mnemonicParsing="false" onAction="#update" text="Update" />
+      <Button layoutX="382.0" layoutY="359.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
+      <Button layoutX="454.0" layoutY="359.0" mnemonicParsing="false" onAction="#update" text="Update" />
+      <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#go_Accom" text="back" />
+      <Button layoutX="524.0" layoutY="360.0" mnemonicParsing="false" onAction="#viewAccom" text="View" />
    </children>
 </AnchorPane>

@@ -2,7 +2,7 @@ package entities;
 
 public class Accommodation {
     private int id,price;
-    private String title,type, address;
+    private String title,type, address, image;
     private Category category;
 
     public int getId() {
@@ -51,6 +51,14 @@ public class Accommodation {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Accommodation() {

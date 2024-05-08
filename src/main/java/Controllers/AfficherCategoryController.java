@@ -8,10 +8,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import services.ServiceAccommodation;
 import services.ServiceCategory;
 
@@ -72,6 +74,27 @@ public class AfficherCategoryController {
         } catch (IOException ex) {
             System.out.println("echec retour main");;
         }
+
+    }
+    @FXML
+    void go_category(ActionEvent event) {try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterCategory.fxml"));
+        Parent root = loader.load();
+
+        // Obtenir le contrôleur de Notificationcontroller
+        AjouterCategoryController ajouterCategoryController = loader.getController();
+
+        // Appeler la méthode pour initialiser les données avec l'ID de réservations
+
+        // Afficher la vue de Notification.fxml
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Notification");
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
 
     }
 

@@ -26,14 +26,6 @@ public class ModifierAccommodationController {
     @FXML
     private TextField addressTF;
 
-//    @FXML
-//    public void initialize() {
-//        titleTF.setText(data.getTitle());
-//        typeTF.setText(data.getType());
-//        addressTF.setText(data.getAddress());
-//        priceTF.setText(data.getPrice()+"");
-//    }
-
     @FXML
     void ModifierAccom(ActionEvent event) {
         String title = titleTF.getText();
