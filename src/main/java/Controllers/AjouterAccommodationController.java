@@ -8,12 +8,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import services.ServiceAccommodation;
 import services.ServiceCategory;
@@ -119,4 +121,26 @@ public class AjouterAccommodationController {
             txtPhoto.setText(file.getAbsolutePath().replace("\\", "\\\\"));
         }
     }
+    @FXML
+    void go_categoryList(ActionEvent event) {try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterAccom.fxml"));
+        Parent root = loader.load();
+
+        // Obtenir le contrôleur de Notificationcontroller
+        AjouterAccommodationController ajouterAccommodationController = loader.getController();
+
+        // Appeler la méthode pour initialiser les données avec l'ID de réservations
+
+        // Afficher la vue de Notification.fxml
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Notification");
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+
+    }
+
 }

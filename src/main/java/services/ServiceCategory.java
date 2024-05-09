@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServiceCategory implements IService<Category>{
+public class ServiceCategory implements IServiceAcc<Category> {
     Connection connection;
 
     public ServiceCategory(){

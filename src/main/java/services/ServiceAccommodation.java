@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServiceAccommodation implements IService<Accommodation>{
+public class ServiceAccommodation implements IServiceAcc<Accommodation> {
     Connection connection;
 
     public ServiceAccommodation(){
