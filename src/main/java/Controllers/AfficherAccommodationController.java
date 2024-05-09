@@ -117,30 +117,29 @@ public class AfficherAccommodationController {
         // Mettre à jour les données de la TableView avec la liste filtrée
         tableView.setItems(filteredList);
     }
-    @FXML
-    void go_Accom(ActionEvent event) {try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterAccom.fxml"));
-        Parent root = loader.load();
-
-        // Obtenir le contrôleur de Notificationcontroller
-        AjouterAccommodationController ajouterAccommodationController = loader.getController();
-
-        // Appeler la méthode pour initialiser les données avec l'ID de réservations
-
-        // Afficher la vue de Notification.fxml
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Notification");
-        stage.show();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-
-    }
-
 
     void setData(String param) {
         welcomeLBL.setText("Accommodation List " + param);
+    }
+
+    @FXML
+    public void go_Categ(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherCategory.fxml"));
+            Parent root = loader.load();
+            tableView.getScene().setRoot(root);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public void add_accom(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterAccom.fxml"));
+            Parent root = loader.load();
+            tableView.getScene().setRoot(root);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
     }
 }

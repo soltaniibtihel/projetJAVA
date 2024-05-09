@@ -103,4 +103,14 @@ public class AfficherCategoryController {
         welcomeLBL.setText("Category List" + param);
     }
 
+    @FXML
+    public void go_accommodations(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherAccom.fxml"));
+            Parent root = loader.load();
+            tableView.getScene().setRoot(root);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
 }

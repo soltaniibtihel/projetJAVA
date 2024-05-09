@@ -68,35 +68,36 @@ public class AjouterAccommodationController {
         String link = txtPhoto.getText();
         Alert error = new Alert(Alert.AlertType.ERROR);
         error.setTitle("Error");
-        if(title.isBlank()){
+        if (title.isBlank()) {
             error.setContentText("Title cannot be empty");
             error.show();
-        }else if(type.isBlank()){
+        } else if (type.isBlank()) {
             error.setContentText("Type cannot be empty");
             error.show();
-        }else if(address.isBlank()){
+        } else if (address.isBlank()) {
             error.setContentText("Address cannot be empty");
             error.show();
-        }else if(priceTF.getText().isBlank()){
+        } else if (priceTF.getText().isBlank()) {
             error.setContentText("Price cannot be empty");
             error.show();
         } else {
-        int price = Integer.parseInt(priceTF.getText());
-        Accommodation p = new Accommodation(title,address,type,price);
-        p.setImage(link);
-        ServiceAccommodation sp = new ServiceAccommodation();
-        try {
-            sp.ajouter(p);
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Success");
-            alert.setContentText("Accommodation has been inserted successfully");
-            alert.show();
-        } catch (SQLException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setContentText(e.getMessage());
-            alert.show();
-        }}
+            int price = Integer.parseInt(priceTF.getText());
+            Accommodation p = new Accommodation(title, address, type, price);
+            p.setImage(link);
+            ServiceAccommodation sp = new ServiceAccommodation();
+            try {
+                sp.ajouter(p);
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Success");
+                alert.setContentText("Accommodation has been inserted successfully");
+                alert.show();
+            } catch (SQLException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setContentText(e.getMessage());
+                alert.show();
+            }
+        }
     }
 
 
@@ -120,27 +121,6 @@ public class AjouterAccommodationController {
         if (file != null) {
             txtPhoto.setText(file.getAbsolutePath().replace("\\", "\\\\"));
         }
-    }
-    @FXML
-    void go_categoryList(ActionEvent event) {try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterAccom.fxml"));
-        Parent root = loader.load();
-
-        // Obtenir le contrôleur de Notificationcontroller
-        AjouterAccommodationController ajouterAccommodationController = loader.getController();
-
-        // Appeler la méthode pour initialiser les données avec l'ID de réservations
-
-        // Afficher la vue de Notification.fxml
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Notification");
-        stage.show();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-
     }
 
 }

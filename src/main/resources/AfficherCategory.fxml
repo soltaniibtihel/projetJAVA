@@ -16,13 +16,14 @@
             <TableColumn fx:id="statisticCol" prefWidth="107.0" text="Statistic" />
         </columns>
       </TableView>
-      <Label fx:id="welcomeLBL" layoutX="133.0" layoutY="14.0" text="Category List" textAlignment="CENTER" textFill="#008035">
+      <Label fx:id="welcomeLBL" layoutX="154.0" layoutY="14.0" text="Category List" textAlignment="CENTER" textFill="#008035">
          <font>
             <Font name="Edwardian Script ITC" size="36.0" />
          </font>
       </Label>
       <Button layoutX="430.0" layoutY="359.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
       <Button layoutX="34.0" layoutY="359.0" mnemonicParsing="false" onAction="#showStats" text="Show stats" />
-      <Button layoutX="19.0" layoutY="14.0" mnemonicParsing="false" onAction="#go_category" text="back" />
+      <Button layoutX="499.0" layoutY="359.0" mnemonicParsing="false" onAction="#go_category" text="add" />
+      <Button layoutX="16.0" layoutY="14.0" mnemonicParsing="false" onAction="#go_accommodations" text="Accommodations List" />
    </children>
 </AnchorPane>

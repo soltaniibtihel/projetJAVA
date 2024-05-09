@@ -28,24 +28,15 @@ public class AccomDetail {
         image.setImage(new Image("file:///"+data.getImage()));
     }
     @FXML
-    void go_accomList(ActionEvent event) {try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherAccom.fxml"));
-        Parent root = loader.load();
-
-        // Obtenir le contrôleur de Notificationcontroller
-        AjouterAccommodationController ajouterAccommodationController = loader.getController();
-
-        // Appeler la méthode pour initialiser les données avec l'ID de réservations
-
-        // Afficher la vue de Notification.fxml
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Notification");
-        stage.show();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
+    void go_accomList(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherAccom.fxml"));
+            Parent root = loader.load();
+            AfficherAccommodationController apc = loader.getController();
+            title.getScene().setRoot(root);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
 
     }
 
